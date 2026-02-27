@@ -38,3 +38,19 @@ body {
     transform: translateY(0);
   }
 }
+/* index.css */
+
+/* Mobile */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .container {
+    padding: 20px;
+  }
+
+}
