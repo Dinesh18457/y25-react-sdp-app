@@ -16,7 +16,6 @@ function UserNavBar() {
       <div className="nav-links">
         <Link to="/user">Home</Link>
         <Link to="/user/resources">Resources</Link>
-        <Link to="/user/borrow">Borrow</Link>
         <Link to="/user/borrowings">My Books</Link>
         <button onClick={handleLogout}>Logout</button>
       </div>

@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import AdminLogin from "./pages/AdminLogin";
 import UserLogin from "./pages/UserLogin";
 import Registration from "./pages/Registration";
+import MyBooks from "./user/MyBooks";
 
 /* Admin Pages */
 import AdminHome from "./admin/AdminHome";
@@ -17,8 +18,8 @@ import ViewResources from "./admin/ViewResources";
 
 /* User Pages */
 import UserHome from "./user/UserHome";
-import BorrowResource from "./user/BorrowResource";
-import ViewBorrowings from "./user/ViewBorrowings";
+
+
 import UserViewResources from "./user/ViewResources";
 
 function App() {
@@ -41,8 +42,10 @@ function App() {
       {/* User Routes */}
       <Route path="/user" element={<UserHome />} />
       <Route path="/user/resources" element={<UserViewResources />} />
-      <Route path="/user/borrow" element={<BorrowResource />} />
-      <Route path="/user/borrowings" element={<ViewBorrowings />} />
+      
+
+      <Route path="/user/borrowings" element={<MyBooks />} />
+     
     </Routes>
   );
 }
