@@ -277,3 +277,99 @@ header {
   }
 
 }
+.content-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  width: fit-content;
+  text-align: left;
+}
+
+.content-box ul li::before {
+  content: "• ";
+  color: white;
+  font-weight: bold;
+}
+.content-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  display: inline-block;
+  text-align: left;
+}
+
+.content-box li {
+  margin: 8px 0;
+  position: relative;
+  padding-left: 18px;
+}
+
+.content-box li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+}
+/* ===== ADMIN PAGE ===== */
+
+.admin-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+/* Admin Navbar */
+.admin-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: linear-gradient(90deg, #0dbacd, #dd2476);
+  color: white;
+  font-weight: 600;
+}
+
+.admin-navbar h2 {
+  font-size: 26px;
+}
+
+.admin-nav-links a,
+.admin-nav-links button {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.admin-nav-links a:hover,
+.admin-nav-links button:hover {
+  color: #ffe082;
+  transform: translateY(-2px);
+}
+
+/* Admin Dashboard Content */
+.admin-content {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 40px;
+  text-align: center;
+
+  backdrop-filter: blur(15px);
+  background: rgba(255,255,255,0.08);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+/* Heading */
+.admin-content h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+/* Sub text */
+.admin-content p {
+  font-size: 18px;
+  opacity: 0.85;
+}
