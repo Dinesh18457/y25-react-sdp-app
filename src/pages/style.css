@@ -1,50 +1,19 @@
-
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 50px;
-  backdrop-filter: blur(15px);
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-.logo {
-  font-weight: 600;
-  font-size: 22px;
-  letter-spacing: 1px;
+body {
+  background: #f4f6f9;
 }
 
-.nav-links a,
-.nav-links button {
-  margin-left: 20px;
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.nav-links a:hover,
-.nav-links button:hover {
-  color: #00f2fe;
-  transform: translateY(-3px);
-}
-
-/* Card Design */
-.card-box {
-  width: 420px;
-  margin: 80px auto;
-  padding: 40px;
-  border-radius: 20px;
-  backdrop-filter: blur(25px);
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
-  text-align: center;
-  animation: fadeUp 0.8s ease;
+/* ================= COMMON PAGE ================= */
+.page-container {
+  min-height: 100vh;
+  color: #fff;
 }
 
 @keyframes fadeUp {
@@ -56,6 +25,58 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  width: 94%;
+  max-width: 1680px;
+  margin: 20px auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 34px;
+  background: rgba(10, 20, 40, 0.82);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 24px;
+  color: #f8fafc;
+  letter-spacing: 0.4px;
+}
+
+.nav-links a,
+.nav-links button {
+  margin-left: 24px;
+  text-decoration: none;
+  color: #e2e8f0;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links button:hover {
+  color: #60a5fa;
+}
+
+/* ================= OLD COMMON CARDS ================= */
+.card-box {
+  width: 420px;
+  margin: 80px auto;
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(25px);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  animation: fadeUp 0.8s ease;
 }
 
 .card-box h2 {
@@ -88,6 +109,7 @@
   transform: scale(1.05);
   box-shadow: 0 0 20px #00f2fe;
 }
+
 .hero-section {
   text-align: center;
   margin-top: 150px;
@@ -103,6 +125,7 @@
   font-size: 18px;
   opacity: 0.8;
 }
+
 .card {
   width: 420px;
   margin: 80px auto;
@@ -123,35 +146,29 @@
   margin-bottom: 20px;
   font-weight: 600;
 }
+
+/* ================= PAGE BACKGROUNDS ================= */
 .home-page {
   background: linear-gradient(135deg, #00c6ff, #0072ff);
 }
+
 .register-page {
   background: linear-gradient(135deg, #ff512f, #dd2476);
 }
+
 .login-page {
-  background: linear-gradient(135deg, #11998e, #38ef7d);
+  background: linear-gradient(135deg, #07111b, #0b1724, #0f1b2d);
 }
+
 .user-page {
   background: linear-gradient(135deg, #fc466b, #3f5efb);
 }
+
 .admin-page {
   background: linear-gradient(135deg, #f7971e, #ffd200);
 }
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
 
-/* BODY */
-body {
-  background: #f4f6f9;
-}
-
-/* HEADER */
+/* ================= HEADER / DASHBOARD ================= */
 header {
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: #fff;
@@ -162,7 +179,6 @@ header {
   flex-wrap: wrap;
 }
 
-/* PROFILE TOP RIGHT */
 .top-right-profile {
   display: flex;
   align-items: center;
@@ -182,7 +198,6 @@ header {
   color: #ffd86b;
 }
 
-/* COURSE GRID */
 .course-container {
   padding: 40px;
   display: grid;
@@ -190,13 +205,12 @@ header {
   gap: 30px;
 }
 
-/* COURSE CARD */
 .course-card {
   background: #fff;
   padding: 30px;
   border-radius: 18px;
   text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: 0.3s;
 }
@@ -210,11 +224,492 @@ header {
   color: #2c5364;
 }
 
+/* ================= ABOUT PAGE ================= */
+.smartlib-about-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #071a26, #0b2c3d, #163b63);
+  color: #fff;
+}
+
+.smartlib-about-wrapper {
+  width: 100%;
+  padding: 50px 20px 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.smartlib-about-box {
+  width: 90%;
+  max-width: 1200px;
+  padding: 40px 35px;
+  border-radius: 22px;
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.45);
+  text-align: center;
+  animation: fadeUp 0.8s ease;
+}
+
+.smartlib-about-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 22px;
+  color: #ffffff;
+}
+
+.smartlib-about-text {
+  font-size: 1.08rem;
+  line-height: 1.9;
+  color: #eaf6ff;
+  max-width: 980px;
+  margin: 0 auto 16px;
+}
+
+.smartlib-about-grid {
+  margin-top: 35px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.smartlib-about-card {
+  text-align: left;
+  padding: 28px 24px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.smartlib-about-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 26px rgba(0, 0, 0, 0.35);
+}
+
+.smartlib-about-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 14px;
+  color: #ffffff;
+}
+
+.smartlib-about-card p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #e7f3fb;
+}
+
+.smartlib-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.smartlib-feature-list li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #e7f3fb;
+  line-height: 1.7;
+}
+
+.smartlib-feature-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #00f2fe;
+  font-weight: bold;
+}
+
+.smartlib-about-highlight {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 242, 254, 0.12),
+    rgba(255, 255, 255, 0.08)
+  );
+  border: 1px solid rgba(0, 242, 254, 0.2);
+}
+
+/* ================= AUTH PAGES ================= */
+.smartlib-auth-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.1), transparent 30%),
+    radial-gradient(circle at 80% 80%, rgba(14, 165, 233, 0.08), transparent 30%),
+    linear-gradient(180deg, #07111b 0%, #0a1624 55%, #0d1b2a 100%);
+  color: #f8fafc;
+}
+
+.smartlib-auth-shell,
+.smartlib-form-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 55px 20px 60px;
+}
+
+.smartlib-auth-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 38px;
+}
+
+.smartlib-auth-eyebrow {
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #60a5fa;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.smartlib-auth-header h1 {
+  font-size: 56px;
+  line-height: 1.1;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #f8fafc;
+}
+
+.smartlib-auth-description {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #94a3b8;
+}
+
+.smartlib-auth-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.smartlib-auth-option {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 290px;
+  padding: 28px 30px;
+  text-decoration: none;
+  color: inherit;
+  background: rgba(8, 20, 40, 0.82);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.22);
+  transition: all 0.28s ease;
+}
+
+.smartlib-auth-option:hover {
+  transform: translateY(-4px);
+  border-color: rgba(96, 165, 250, 0.35);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+}
+
+.smartlib-auth-option-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 34px;
+}
+
+.smartlib-auth-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  background: rgba(37, 99, 235, 0.16);
+  border: 1px solid rgba(96, 165, 250, 0.22);
+}
+
+.smartlib-auth-tag {
+  font-size: 15px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.smartlib-auth-option h2 {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 18px;
+  color: #ffffff;
+}
+
+.smartlib-auth-option p {
+  font-size: 16px;
+  line-height: 1.8;
+  text-align: center;
+  color: #94a3b8;
+  margin-bottom: 28px;
+}
+
+.smartlib-auth-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
+  padding-top: 18px;
+  font-size: 16px;
+  color: #e2e8f0;
+  font-weight: 500;
+}
+
+.smartlib-auth-arrow {
+  font-size: 24px;
+  color: #60a5fa;
+}
+
+/* ================= ADMIN LOGIN FORM ================= */
+.smartlib-form-panel {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  background: rgba(8, 20, 40, 0.82);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.24);
+}
+
+.smartlib-form-left {
+  padding: 48px 40px;
+  border-right: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.smartlib-form-left h1 {
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  color: #f8fafc;
+}
+
+.smartlib-form-left p {
+  color: #94a3b8;
+  line-height: 1.8;
+  font-size: 16px;
+  max-width: 520px;
+}
+
+.smartlib-form-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.smartlib-form-info div {
+  padding: 18px 20px;
+  background: rgba(2, 6, 23, 0.26);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  border-radius: 14px;
+}
+
+.smartlib-info-label {
+  display: block;
+  font-size: 12px;
+  color: #64748b;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.smartlib-form-info strong {
+  font-size: 16px;
+  color: #e2e8f0;
+}
+
+.smartlib-form-right {
+  padding: 48px 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.smartlib-form-right h2 {
+  font-size: 30px;
+  margin-bottom: 26px;
+  color: #f8fafc;
+  font-weight: 650;
+}
+
+.smartlib-enterprise-input {
+  margin-bottom: 20px;
+}
+
+.smartlib-enterprise-input label {
+  display: block;
+  margin-bottom: 9px;
+  color: #cbd5e1;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.smartlib-enterprise-input input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  background: rgba(2, 6, 23, 0.4);
+  color: #f8fafc;
+  outline: none;
+  font-size: 16px;
+  transition: all 0.25s ease;
+}
+
+.smartlib-enterprise-input input::placeholder {
+  color: #64748b;
+}
+
+.smartlib-enterprise-input input:focus {
+  border-color: rgba(96, 165, 250, 0.55);
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.12);
+}
+
+.smartlib-enterprise-btn {
+  width: 100%;
+  margin-top: 8px;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 12px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.smartlib-enterprise-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
 /* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .smartlib-about-grid {
+    grid-template-columns: 1fr;
+  }
 
-/* 📱 Mobile */
+  .smartlib-auth-header h1 {
+    font-size: 42px;
+  }
+
+  .smartlib-auth-description {
+    font-size: 16px;
+  }
+
+  .smartlib-auth-options {
+    grid-template-columns: 1fr;
+  }
+
+  .smartlib-form-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .smartlib-form-left {
+    border-right: none;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+  }
+
+  .smartlib-form-left h1 {
+    font-size: 34px;
+  }
+
+  .smartlib-about-box {
+    width: 95%;
+    padding: 30px 20px;
+  }
+
+  .smartlib-about-title {
+    font-size: 2rem;
+  }
+
+  .smartlib-about-text {
+    font-size: 0.98rem;
+  }
+
+  .smartlib-about-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .course-container {
+    padding: 25px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .course-card {
+    padding: 25px;
+  }
+
+  header {
+    padding: 15px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .smartlib-auth-shell,
+  .smartlib-form-shell {
+    padding: 35px 14px 40px;
+  }
+
+  .smartlib-auth-header {
+    margin-bottom: 28px;
+  }
+
+  .smartlib-auth-header h1 {
+    font-size: 34px;
+  }
+
+  .smartlib-auth-description {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .smartlib-auth-option {
+    min-height: auto;
+    padding: 22px 18px;
+  }
+
+  .smartlib-auth-option-top {
+    margin-bottom: 24px;
+  }
+
+  .smartlib-auth-icon {
+    width: 46px;
+    height: 46px;
+    font-size: 18px;
+  }
+
+  .smartlib-auth-tag {
+    font-size: 13px;
+  }
+
+  .smartlib-auth-option h2 {
+    font-size: 24px;
+  }
+
+  .smartlib-auth-option p {
+    font-size: 15px;
+  }
+
+  .smartlib-auth-footer {
+    font-size: 15px;
+  }
+
+  .smartlib-form-left,
+  .smartlib-form-right {
+    padding: 30px 20px;
+  }
+
+  .smartlib-form-info {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 480px) {
-
   header {
     flex-direction: column;
     text-align: center;
@@ -240,41 +735,659 @@ header {
     font-size: 18px;
   }
 
+  .smartlib-about-title {
+    font-size: 1.7rem;
+  }
+
+  .smartlib-about-wrapper {
+    padding: 30px 12px 40px;
+  }
+
+  .smartlib-about-card {
+    padding: 22px 18px;
+  }
+
+  .navbar {
+    width: 96%;
+    padding: 16px 18px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-links a,
+  .nav-links button {
+    margin: 6px 10px;
+  }
+}
+/* ================= SMARTLIB REGISTER PAGE ================= */
+
+.smartlib-register-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.08), transparent 20%),
+    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.06), transparent 22%),
+    linear-gradient(135deg, #07111b, #0b1724, #0f1b2d);
+  color: #ffffff;
 }
 
-/* 📲 Tablet */
+.smartlib-register-wrapper {
+  min-height: calc(100vh - 90px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px 60px;
+}
+
+.smartlib-register-card {
+  width: 100%;
+  max-width: 520px;
+  padding: 40px 34px;
+  border-radius: 24px;
+  background: rgba(8, 20, 40, 0.82);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(14px);
+  animation: fadeUp 0.8s ease;
+}
+
+.smartlib-register-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.14);
+  border: 1px solid rgba(96, 165, 250, 0.22);
+  color: #93c5fd;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.smartlib-register-card h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.smartlib-register-subtitle {
+  color: #94a3b8;
+  line-height: 1.8;
+  font-size: 0.98rem;
+  margin-bottom: 28px;
+}
+
+.smartlib-register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.smartlib-input-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.smartlib-input-wrap label {
+  margin-bottom: 8px;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.smartlib-input-wrap input,
+.smartlib-input-wrap select {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  background: rgba(2, 6, 23, 0.4);
+  color: #f8fafc;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.25s ease;
+}
+
+.smartlib-input-wrap input::placeholder {
+  color: #64748b;
+}
+
+.smartlib-input-wrap input:focus,
+.smartlib-input-wrap select:focus {
+  border-color: rgba(96, 165, 250, 0.55);
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.12);
+}
+
+.smartlib-input-wrap select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+.smartlib-register-btn {
+  margin-top: 8px;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.smartlib-register-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .smartlib-register-wrapper {
+    padding: 25px 14px 40px;
+  }
+
+  .smartlib-register-card {
+    padding: 28px 20px;
+  }
+
+  .smartlib-register-card h2 {
+    font-size: 1.8rem;
+  }
+
+  .smartlib-register-subtitle {
+    font-size: 0.92rem;
+  }
+}
+/* ================= USER PROFILE NAVBAR ================= */
+
+/* ================= USER NAVBAR REFINED ================= */
+
+.smartlib-user-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.smartlib-user-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.smartlib-user-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.smartlib-user-nav-links a {
+  text-decoration: none;
+  color: #e2e8f0;
+  font-weight: 500;
+  transition: 0.25s ease;
+}
+
+.smartlib-user-nav-links a:hover {
+  color: #60a5fa;
+}
+
+.smartlib-user-account {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-left: 18px;
+  border-left: 1px solid rgba(148, 163, 184, 0.16);
+}
+
+.smartlib-user-account-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px 6px 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.smartlib-user-account-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.smartlib-user-account-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  padding-right: 4px;
+}
+
+.smartlib-user-account-name {
+  color: #f8fafc;
+  font-size: 0.94rem;
+  font-weight: 600;
+}
+
+.smartlib-user-account-dept {
+  color: #94a3b8;
+  font-size: 0.78rem;
+}
+
+.smartlib-user-logout-btn {
+  border: none;
+  background: transparent;
+  color: #cbd5e1;
+  font-size: 0.94rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.25s ease;
+  padding: 0;
+}
+
+.smartlib-user-logout-btn:hover {
+  color: #60a5fa;
+}
+
+@media (max-width: 900px) {
+  .smartlib-user-navbar {
+    flex-direction: column;
+    gap: 14px;
+    align-items: stretch;
+  }
+
+  .smartlib-user-nav-right {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .smartlib-user-nav-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .smartlib-user-account {
+    justify-content: center;
+    border-left: none;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .smartlib-user-account {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .smartlib-user-account-info {
+    width: 100%;
+    justify-content: center;
+  }
+}
+/* ================= USER DASHBOARD ================= */
+
+.user-dashboard-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 55px 20px 60px;
+}
+
+.user-dashboard-hero {
+  margin-bottom: 30px;
+}
+
+.user-dashboard-hero.small-hero {
+  margin-bottom: 24px;
+}
+
+.user-dashboard-eyebrow {
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #60a5fa;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.user-dashboard-hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 14px;
+  color: #ffffff;
+}
+
+.user-dashboard-text {
+  max-width: 760px;
+  color: #94a3b8;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.user-dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.user-dashboard-card {
+  background: rgba(8, 20, 40, 0.82);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.user-dashboard-card h3 {
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-size: 1.15rem;
+}
+
+.user-dashboard-card p {
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+
+/* ================= MY BOOKS ================= */
+
+.user-books-card {
+  background: rgba(8, 20, 40, 0.82);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
+}
+
+.user-books-header {
+  margin-bottom: 22px;
+}
+
+.user-books-header h3 {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.user-books-header span {
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+.user-books-table-wrapper {
+  overflow-x: auto;
+}
+
+.user-books-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #f8fafc;
+}
+
+.user-books-table th,
+.user-books-table td {
+  text-align: left;
+  padding: 16px 14px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.user-books-table th {
+  color: #93c5fd;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.user-books-table td {
+  color: #e2e8f0;
+}
+
+.user-book-badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(34, 197, 94, 0.16);
+  color: #86efac;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .user-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
-
-  header {
-    padding: 15px 20px;
+  .user-navbar-right {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
-  .course-container {
-    padding: 25px;
-    grid-template-columns: repeat(2, 1fr);
+  .user-profile-box {
+    margin-left: 0;
   }
 
-  .course-card {
-    padding: 25px;
+  .user-dashboard-hero h1 {
+    font-size: 2.1rem;
   }
-
 }
 
-/* 💻 Small Laptop */
-@media (max-width: 1024px) {
-
-  .course-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+@media (max-width: 480px) {
+  .user-dashboard-shell {
+    padding: 35px 14px 40px;
   }
 
+  .user-books-card {
+    padding: 20px 16px;
+  }
+}
+/* ================= USER NAVBAR CLEAN ================= */
+
+.smartlib-user-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* 🖥 Large Screens */
-@media (min-width: 1400px) {
+.smartlib-user-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
 
-  .course-container {
-    grid-template-columns: repeat(4, 1fr);
+.smartlib-user-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.smartlib-user-nav-links a {
+  text-decoration: none;
+  color: #e2e8f0;
+  font-weight: 500;
+  transition: 0.25s ease;
+}
+
+.smartlib-user-nav-links a:hover {
+  color: #60a5fa;
+}
+
+.smartlib-user-menu {
+  position: relative;
+}
+
+.smartlib-user-menu-trigger {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 999px;
+  padding: 6px 12px 6px 6px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.smartlib-user-menu-trigger:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.smartlib-user-menu-avatar,
+.smartlib-user-dropdown-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.smartlib-user-menu-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.15;
+}
+
+.smartlib-user-menu-name {
+  color: #f8fafc;
+  font-size: 0.94rem;
+  font-weight: 600;
+}
+
+.smartlib-user-menu-dept {
+  color: #94a3b8;
+  font-size: 0.78rem;
+}
+
+.smartlib-user-menu-caret {
+  color: #94a3b8;
+  font-size: 0.8rem;
+  margin-left: 2px;
+}
+
+.smartlib-user-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 290px;
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(8, 20, 40, 0.96);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(14px);
+  z-index: 50;
+}
+
+.smartlib-user-dropdown-header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.smartlib-user-dropdown-header h4 {
+  margin: 0 0 4px;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.smartlib-user-dropdown-header p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 0.84rem;
+  word-break: break-word;
+}
+
+.smartlib-user-dropdown-info {
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(2, 6, 23, 0.34);
+  border: 1px solid rgba(148, 163, 184, 0.08);
+  margin-bottom: 14px;
+}
+
+.smartlib-user-dropdown-info span {
+  display: block;
+  color: #94a3b8;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.smartlib-user-dropdown-info strong {
+  color: #f8fafc;
+  font-size: 0.96rem;
+}
+
+.smartlib-user-dropdown-logout {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.smartlib-user-dropdown-logout:hover {
+  background: #1d4ed8;
+}
+
+@media (max-width: 900px) {
+  .smartlib-user-navbar {
+    flex-direction: column;
+    gap: 14px;
+    align-items: stretch;
   }
 
+  .smartlib-user-nav-right {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .smartlib-user-nav-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .smartlib-user-menu {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .smartlib-user-dropdown {
+    width: 260px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .smartlib-user-menu-trigger {
+    width: 100%;
+    justify-content: center;
+  }
 }

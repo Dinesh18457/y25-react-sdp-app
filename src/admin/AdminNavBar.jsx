@@ -1,24 +1,18 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./admin.css";
 
 function AdminNavBar() {
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    navigate("/");
-  };
-
   return (
-    <nav className="navbar admin-navbar">
-      <h2>Admin Panel</h2>
+    <nav className="admin-navbar">
+      <div className="admin-logo">Admin Panel</div>
 
-      <div className="nav-links">
+      <div className="admin-nav-links">
         <Link to="/admin">Dashboard</Link>
         <Link to="/admin/add">Add Resource</Link>
         <Link to="/admin/resources">Resources</Link>
         <Link to="/admin/users">Users</Link>
-        <button onClick={handleLogout}>Logout</button>
+        <Link to="/">Logout</Link>
       </div>
     </nav>
   );

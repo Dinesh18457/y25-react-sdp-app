@@ -1,117 +1,140 @@
-import React, { useState } from "react";
+import React from "react";
 import UserNavBar from "./UserNavBar";
+import "../pages/style.css";
 import "./user.css";
 
 function ViewResources() {
+  const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser")) || {};
+  const department = loggedInUser.department || "Engineering";
 
-  const [selectedDept, setSelectedDept] = useState(null);
-  const [selectedCourse, setSelectedCourse] = useState(null);
-
-  const departments = {
-    Engineering: ["CSE", "MECH", "ECE", "EEE", "Civil"],
-    Medical: ["MBBS", "BDS", "Pharmacy"],
-    Law: ["Criminal Law", "Corporate Law"],
-    Commerce: ["B.Com", "M.Com"],
-    Science: ["Physics", "Chemistry", "Biology"]
-  };
-
-  const books = {
-  CSE: [
+  const resources = [
+    // Engineering
     {
       id: 1,
       title: "React Basics",
       author: "Dan Abramov",
-      file: "/pdfs/react-basics.pdf"
+      dept: "Engineering",
+      file: "/pdfs/react-basics.pdf",
     },
     {
       id: 2,
       title: "Data Structures",
       author: "Mark Allen",
-      file: "/pdfs/data-structures.pdf"
-    }
-  ],
-
-  MECH: [
+      dept: "Engineering",
+      file: "/pdfs/data-structures.pdf",
+    },
     {
       id: 3,
-      title: "Thermodynamics",
-      author: "Yunus Cengel",
-      file: "/pdfs/thermodynamics.pdf"
-    }
-  ]
-};
+      title: "Operating Systems",
+      author: "Silberschatz",
+      dept: "Engineering",
+      file: "/pdfs/os.pdf",
+    },
+    {
+      id: 4,
+      title: "Database Management Systems",
+      author: "Korth",
+      dept: "Engineering",
+      file: "/pdfs/dbms.pdf",
+    },
+
+    // Medical
+    {
+      id: 5,
+      title: "Human Anatomy",
+      author: "Dr. A. Sharma",
+      dept: "Medical",
+      file: "/pdfs/anatomy.pdf",
+    },
+    {
+      id: 6,
+      title: "Physiology Basics",
+      author: "Dr. Meera",
+      dept: "Medical",
+      file: "/pdfs/physiology.pdf",
+    },
+
+    // Law
+    {
+      id: 7,
+      title: "Constitutional Law",
+      author: "M. P. Jain",
+      dept: "Law",
+      file: "/pdfs/constitutional-law.pdf",
+    },
+    {
+      id: 8,
+      title: "Business Law",
+      author: "A. Kumar",
+      dept: "Law",
+      file: "/pdfs/business-law.pdf",
+    },
+
+    // Commerce
+    {
+      id: 9,
+      title: "Financial Accounting",
+      author: "S. P. Gupta",
+      dept: "Commerce",
+      file: "/pdfs/accounting.pdf",
+    },
+    {
+      id: 10,
+      title: "Business Economics",
+      author: "R. Agarwal",
+      dept: "Commerce",
+      file: "/pdfs/economics.pdf",
+    },
+
+    // Science
+    {
+      id: 11,
+      title: "Physics Fundamentals",
+      author: "H. C. Verma",
+      dept: "Science",
+      file: "/pdfs/physics.pdf",
+    },
+    {
+      id: 12,
+      title: "Organic Chemistry",
+      author: "Morrison & Boyd",
+      dept: "Science",
+      file: "/pdfs/chemistry.pdf",
+    },
+  ];
+
+  const filteredBooks = resources.filter(
+    (book) => book.dept === department
+  );
+
+  const openBook = (file) => {
+    window.open(file, "_blank");
+  };
 
   return (
-    <div>
+    <div className="page-container">
       <UserNavBar />
 
-      <div className="user-content">
+      <div className="simple-resources-container">
+        <h2 className="dept-title">Departments</h2>
+        <h3 className="dept-subtitle">{department} Books</h3>
 
-        <h2>Departments</h2>
-
-        {!selectedDept && (
-          <div className="card-container">
-            {Object.keys(departments).map((dept) => (
+        <div className="simple-resource-list">
+          {filteredBooks.length > 0 ? (
+            filteredBooks.map((book) => (
               <div
-                key={dept}
-                className="card"
-                onClick={() => {
-                  setSelectedDept(dept);
-                  setSelectedCourse(null);
-                }}
-              >
-                {dept}
-              </div>
-            ))}
-          </div>
-        )}
-
-        {selectedDept && !selectedCourse && (
-          <>
-            <h2>{selectedDept} Courses</h2>
-            <div className="card-container">
-              {departments[selectedDept].map((course) => (
-                <div
-                  key={course}
-                  className="card"
-                  onClick={() => setSelectedCourse(course)}
-                >
-                  {course}
-                </div>
-              ))}
-            </div>
-          </>
-        )}
-
-        {selectedCourse && (
-          <>
-            <h2>{selectedCourse} Books</h2>
-            <div className="card-container">
-              {(books[selectedCourse] || []).map((book) => (
-                <div
+                className="simple-resource-card"
                 key={book.id}
-                className="card"
-                onClick={() => {
-  window.open(book.file, "_blank");
-
-  let stored = JSON.parse(localStorage.getItem("openedBooks")) || [];
-
-  const alreadyExists = stored.find(b => b.title === book.title);
-
-  if (!alreadyExists) {
-    stored.push(book);
-    localStorage.setItem("openedBooks", JSON.stringify(stored));
-  }
-}}
-                >
-                <p>{book.title}</p>
+                onClick={() => openBook(book.file)}
+              >
+                <h4>{book.title}</h4>
                 <p>{book.author}</p>
-                </div>
-              ))}
-            </div>
-          </>
-        )}
-
+              </div>
+            ))
+          ) : (
+            <p style={{ color: "white" }}>No books available for this department.</p>
+          )}
+        </div>
       </div>
     </div>
   );

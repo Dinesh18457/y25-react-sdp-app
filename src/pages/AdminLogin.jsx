@@ -17,26 +17,60 @@ function AdminLogin() {
   };
 
   return (
-    <div className="page-container">
+    <div className="page-container smartlib-auth-page">
       <MainNavBar />
 
-      <div className="card-box">
-        <h2>Admin Login</h2>
+      <section className="smartlib-form-shell">
+        <div className="smartlib-form-panel">
+          <div className="smartlib-form-left">
+            <p className="smartlib-auth-eyebrow">Admin Authentication</p>
+            <h1>Secure Admin Access</h1>
+            <p>
+              Sign in to access the SmartLib administration environment. This
+              workspace is intended for authorized administrators only.
+            </p>
 
-        <input
-          type="text"
-          placeholder="Username"
-          onChange={(e) => setUsername(e.target.value)}
-        />
+            <div className="smartlib-form-info">
+              <div>
+                <span className="smartlib-info-label">Access Level</span>
+                <strong>Administrator</strong>
+              </div>
+              <div>
+                <span className="smartlib-info-label">Security</span>
+                <strong>Credential Protected</strong>
+              </div>
+            </div>
+          </div>
 
-        <input
-          type="password"
-          placeholder="Password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
+          <div className="smartlib-form-right">
+            <h2>Admin Login</h2>
 
-        <button onClick={handleLogin}>Login</button>
-      </div>
+            <div className="smartlib-enterprise-input">
+              <label>Username</label>
+              <input
+                type="text"
+                placeholder="Enter your username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            </div>
+
+            <div className="smartlib-enterprise-input">
+              <label>Password</label>
+              <input
+                type="password"
+                placeholder="Enter your password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+
+            <button className="smartlib-enterprise-btn" onClick={handleLogin}>
+              Sign In
+            </button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

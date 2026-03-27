@@ -1,66 +1,135 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
 import MainNavBar from "./MainNavBar";
 import "./style.css";
 
 function Registration() {
   const navigate = useNavigate();
 
-  const [form, setForm] = useState({
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
+    department: "",
   });
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+  const capitalizeName = (value) => {
+    return value.replace(/\b\w/g, (char) => char.toUpperCase());
   };
 
-  const handleRegister = () => {
-    if (!form.name || !form.email || !form.password) {
-      alert("Fill all fields");
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    if (name === "name") {
+      setFormData({ ...formData, name: capitalizeName(value) });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
+  };
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+
+    const existingUsers =
+      JSON.parse(localStorage.getItem("smartlib_users")) || [];
+
+    const alreadyExists = existingUsers.some(
+      (user) => user.email === formData.email
+    );
+
+    if (alreadyExists) {
+      alert("User already registered with this email.");
       return;
     }
 
-    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const newUser = {
+      id: Date.now(),
+      ...formData,
+      status: "Active",
+    };
 
-    const exists = users.find((u) => u.email === form.email);
-    if (exists) {
-      alert("User already registered");
-      return;
-    }
+    localStorage.setItem(
+      "smartlib_users",
+      JSON.stringify([...existingUsers, newUser])
+    );
 
-    users.push(form);
-    localStorage.setItem("users", JSON.stringify(users));
-
-    alert("Registration Successful!");
+    alert("Registration successful!");
     navigate("/user-login");
   };
 
   return (
-    
-    <div className="page-container registration-page">
+    <div className="page-container smartlib-register-page">
       <MainNavBar />
-      <motion.div
-        className="card-box"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        <h2>Create Account</h2>
 
-        <input name="name" placeholder="Full Name" onChange={handleChange} />
-        <input name="email" placeholder="Email" onChange={handleChange} />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          onChange={handleChange}
-        />
+      <div className="smartlib-register-wrapper">
+        <div className="smartlib-register-card">
+          <p className="smartlib-register-badge">Student Registration</p>
+          <h2>Create Account</h2>
+          <p className="smartlib-register-subtitle">
+            Join SmartLib to access digital resources, academic materials, and
+            department-wise study content.
+          </p>
 
-        <button onClick={handleRegister}>Register</button>
-      </motion.div>
+          <form onSubmit={handleRegister} className="smartlib-register-form">
+            <div className="smartlib-input-wrap">
+              <label>Full Name</label>
+              <input
+                type="text"
+                name="name"
+                placeholder="Enter your full name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className="smartlib-input-wrap">
+              <label>Email Address</label>
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email address"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className="smartlib-input-wrap">
+              <label>Password</label>
+              <input
+                type="password"
+                name="password"
+                placeholder="Create a password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className="smartlib-input-wrap">
+              <label>Department</label>
+              <select
+                name="department"
+                value={formData.department}
+                onChange={handleChange}
+                required
+              >
+                <option value="">Select Department</option>
+                <option>Engineering</option>
+                <option>Medical</option>
+                <option>Law</option>
+                <option>Commerce</option>
+                <option>Science</option>
+              </select>
+            </div>
+
+            <button type="submit" className="smartlib-register-btn">
+              Register
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 }
