@@ -44,7 +44,7 @@ function ApiDemo() {
 
       <div className="hero-section">
         <h1>Digital Library API Demo</h1>
-        <p>Fetches a Digital Library resources list from local API endpoint using hooks (useEffect/useState + async/await).</p>
+        
 
         <div>
           <button className="primary-button" onClick={loadPosts} disabled={loading}>
