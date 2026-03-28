@@ -20,6 +20,7 @@ import ResourceDetails from "./admin/ResourceDetails";
 import UserHome from "./user/UserHome";
 import UserViewResources from "./user/ViewResources";
 import MyBooks from "./user/MyBooks";
+import ApiDemo from "./pages/ApiDemo";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
       <Route path="/user" element={<UserHome />} />
       <Route path="/user/resources" element={<UserViewResources />} />
       <Route path="/user/borrowings" element={<MyBooks />} />
+      <Route path="/api-demo" element={<ApiDemo />} />
     </Routes>
   );
 }

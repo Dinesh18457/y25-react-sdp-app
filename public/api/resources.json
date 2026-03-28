@@ -1,0 +1,6 @@
+[
+  {"id": 1, "title": "Digital Electronics Handbook", "department": "Engineering", "status": "Available"},
+  {"id": 2, "title": "Human Anatomy Notes", "department": "Medical", "status": "Issued"},
+  {"id": 3, "title": "Data Structures in JS", "department": "Computer Science", "status": "Available"},
+  {"id": 4, "title": "Modern React Patterns", "department": "Computer Science", "status": "Issued"}
+]
